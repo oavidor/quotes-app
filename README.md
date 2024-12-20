@@ -6,6 +6,8 @@ A React application for displaying random quotes, allowing the user to enter the
 
 # instructions
 
+please use a different terminal from the server/backend terminal
+
 # Clone the repository
 
 git clone https://github.com/oavidor/quotes-app.git
