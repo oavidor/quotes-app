@@ -2,10 +2,13 @@ import React, { useReducer, useCallback } from 'react';
 import { Box, Typography } from '@mui/material';
 import useQuotesData from '@app/hooks/useQuotesData';
 import QuoteList from '@app/components/features/QuoteList/QuoteList';
-import ControlPanel from '../../components/features/ControlPanel/ControlPanel';
+import ControlPanel from '@app/components/features/ControlPanel/ControlPanel';
 import ErrorComponent from '@app/components/ui/ErrorComponent/ErrorComponent';
 import LoaderComponent from '@app/components/ui/LoaderComponent/LoaderComponent';
-import { quotesReducer, initialState } from './quotesReducer';
+import { quotesReducer, initialState, ActionType } from './quotesReducer';
+
+const MAX_COUNT = 25;
+const MIN_COUNT = 0;
 
 const QuotesView: React.FC = () => {
   const [state, dispatch] = useReducer(quotesReducer, initialState);
@@ -14,38 +17,42 @@ const QuotesView: React.FC = () => {
 
   const handleCountChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: 'SET_COUNT', payload: Number(event.target.value) });
+      dispatch({ type: ActionType.SET_STATE, payload: { count: Number(event.target.value), error: null } });
     },
     []
   );
 
   const handleFilterChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: 'SET_FILTER', payload: event.target.value });
+      dispatch({ type: ActionType.SET_STATE, payload: { filter: event.target.value, error: null } });
     },
     []
   );
 
   const handleFetchQuotes = useCallback(async () => {
-    if (count <= 0 || count > 25) {
-      dispatch({ type: 'SET_ERROR', payload: 'Number must be greater than 0 and smaller than 25' });
+    if (count <= MIN_COUNT || count > MAX_COUNT) {
+      dispatch({
+        type: ActionType.SET_STATE,
+        payload: { error: `Number must be greater than ${MIN_COUNT} and smaller than ${MAX_COUNT}` },
+      });
       return;
     }
-    dispatch({ type: 'INITIATE_FETCH_REQUEST' });
+    dispatch({ type: ActionType.INITIATE_FETCH_REQUEST });
 
     try {
       const fetchedQuotes = await fetchQuotes(count, filter);
-      dispatch({ type: 'SET_QUOTES', payload: fetchedQuotes });
+      dispatch({ type: ActionType.SET_STATE, payload: { quotes: fetchedQuotes, loading: false } });
     } catch (err) {
-      dispatch({ type: 'SET_ERROR', payload: `${err ?? 'Error fetching quotes'}`});
-    } finally {
-      dispatch({ type: 'SET_LOADING', payload: false });
+      dispatch({
+        type: ActionType.SET_STATE,
+        payload: { error: `${err ?? 'Error fetching quotes'}`, loading: false },
+      });
     }
   }, [fetchQuotes, filter, count]);
 
   return (
     <Box sx={{ marginTop: 4, px: '2em' }}>
-      <Typography variant="h4" align="center" gutterBottom sx={{marginBottom: '1em'}}>
+      <Typography variant="h4" align="center" gutterBottom sx={{ marginBottom: '1em' }}>
         Quotes of the Day
       </Typography>
       <ControlPanel
