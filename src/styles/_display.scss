@@ -1,0 +1,97 @@
+.none {
+  display: none !important;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.grid {
+  display: grid !important;
+}
+
+.grid-columns-2 {
+  @extend .grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+.grid-columns-3 {
+  @extend .grid;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.flex-wrap {
+  @extend .flex;
+  flex-wrap: wrap !important;
+}
+
+.flex-column {
+  @extend .flex;
+  flex-direction: column !important;
+}
+
+.flex-row {
+  @extend .flex;
+  flex-direction: row !important;
+}
+
+.flex-content-start {
+  @extend .flex;
+  justify-content: start !important;
+}
+
+.flex-content-end {
+  @extend .flex;
+  justify-content: end !important;
+}
+
+.flex-center {
+  @extend .flex;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.flex-content-between {
+  @extend .flex;
+  justify-content: space-between !important;
+}
+
+.flex-content-center {
+  @extend .flex;
+  justify-content: center !important;
+}
+
+.flex-items-center {
+  @extend .flex;
+  align-items: center !important;
+}
+
+.flex-items-start {
+  @extend .flex;
+  align-items: start !important;
+}
+
+.flex-items-end {
+  @extend .flex;
+  align-items: end !important;
+}
+
+.flex-1 {
+  flex: 1% !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}

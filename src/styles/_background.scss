@@ -1,0 +1,79 @@
+.bg-primary {
+  background: $primary !important;
+}
+
+.bg-dark-primary {
+  background: $dark-primary !important;
+}
+
+.bg-linear-primary {
+  background: linear-gradient(180deg, #003c6f 3.65%, #022754 79.17%);
+
+  & > #mask {
+    mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 59, 111, 0)), to(rgba(0, 59, 111, 0.45)));
+    & > #ellipses {
+      background: url('../assets/images/ellipse.svg');
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & > #content {
+    z-index: 2;
+  }
+}
+
+.bg-white {
+  background: white !important;
+}
+
+.bg-black {
+  background: black !important;
+}
+
+.bg-red {
+  background: $red-1 !important;
+}
+
+.bg-red-2 {
+  background: $red-2 !important;
+}
+
+
+.bg-linear-light-blue {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), $light-blue !important;
+}
+
+.bg-light-red {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #f44336 !important;
+}
+
+.bg-light-yellow {
+  background: #ffecb3 !important;
+}
+
+.bg-light-yellow-2 {
+  background-color: $light-yellow-2 !important;
+}
+
+.background-full-cover {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.bg-light-gray {
+  background-color: $gray-3 !important;
+}
+
+.bg-transparent {
+  background: transparent !important;
+}
+
+.bg-light-purple {
+  background: rgba(63, 81, 181, 0.08) !important;
+}
+
+.bg-gray-4 {
+  background: $gray-4 !important;
+}

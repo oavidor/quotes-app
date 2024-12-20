@@ -1,0 +1,223 @@
+//aligns
+.text-center {
+  text-align: center !important;
+}
+
+.text-warning {
+  $warning: mix(rgba(black, 0.9), #f44336, 50%); // this color is from our figma
+  color: $warning !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-black {
+  color: black !important;
+}
+
+.text-black-2 {
+  color: #08192B !important
+}
+
+.text-red {
+  color: $red-1 !important;
+}
+
+.inactive {
+  color: $red-1 !important;
+}
+
+.text-light-blue {
+  color: $light-blue !important;
+}
+
+.text-secondary {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-green {
+  color: $green !important;
+}
+
+.text-muted {
+  color: #4f4f4f !important;
+}
+
+.text-gray-1 {
+  color: gray;
+}
+
+.text-gray-2 {
+  color: $gray-2;
+}
+
+.text-gray-4 {
+  color: $gray-4;
+  opacity: 0.8;
+}
+
+.text-red-2 {
+  color: $red-2;
+}
+
+.text-dark {
+  color: $dark-primary
+}
+
+//small
+.font-small-1 {
+  font-size: 0.7rem !important;
+}
+
+.font-small-2 {
+  font-size: 0.8rem !important;
+}
+
+.font-small-3 {
+  font-size: 0.875rem !important;
+}
+
+.font-small-4 {
+  font-size: 0.9rem !important;
+}
+
+.font-small-5 {
+  font-size: 1rem !important;
+}
+
+//medium
+.font-medium-1 {
+  font-size: 1rem !important;
+}
+
+.font-medium-6 {
+  font-size: 1.125rem !important;
+}
+
+.font-medium-2 {
+  font-size: 1.2rem !important;
+}
+
+.font-medium-3 {
+  font-size: 1.3rem !important;
+}
+
+.font-medium-4 {
+  font-size: 1.4rem !important;
+}
+
+.font-medium-5 {
+  font-size: 1.5rem !important;
+}
+
+.font-medium-7 {
+  font-size: 1.25rem !important;
+}
+
+//large
+.font-large-1 {
+  font-size: 2rem !important;
+}
+
+.font-large-2-5 {
+  font-size: 2.5rem !important;
+}
+
+.font-large-2 {
+  font-size: 3rem !important;
+}
+
+.font-large-3 {
+  font-size: 4rem !important;
+}
+
+.font-large-4 {
+  font-size: 5rem !important;
+}
+
+.font-large-5 {
+  font-size: 6rem !important;
+}
+
+.bold-300 {
+  font-weight: 300 !important;
+}
+
+.bold-400 {
+  font-weight: 400 !important;
+}
+
+.bold-500 {
+  font-weight: 500 !important;
+}
+
+.bold-600 {
+  font-weight: 600 !important;
+}
+
+.bold-700 {
+  font-weight: 700 !important;
+}
+
+.bold-900 {
+  font-weight: 900 !important;
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.italic {
+  font-style: italic !important;
+}
+
+.underlined {
+  text-decoration: underline !important;
+}
+
+.no-decoration {
+  text-decoration: none !important;
+}
+.list-item {
+  display: list-item;
+}
+
+.bullets-list {
+  list-style-type: disc !important;
+}
+
+.numeric-list {
+  list-style-type: decimal !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.lowercase {
+  text-transform: lowercase !important;
+}
+
+.capitalize {
+  text-transform: capitalize !important;
+}
+
+.first-letter-upper:first-letter {
+  text-transform: uppercase !important;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-vertical {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}

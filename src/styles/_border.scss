@@ -1,0 +1,123 @@
+.border {
+  border: 1px solid #d8d8d8 !important;
+}
+
+.border-green {
+  border: 1px solid $green !important;
+}
+
+.border-white-1 {
+  border: 1px solid #ebebeb !important;
+}
+
+.border-blue-light-1 {
+  border: 1px solid #7f9cb66b !important;
+}
+
+.border-green-1 {
+  border: 1px solid $green !important;
+}
+
+.border-green-2 {
+  border: 2px solid $green !important;
+}
+
+.no-border {
+  border: unset !important;
+}
+
+.border-gray-0-5 {
+  border: 0.5px solid $gray-2;
+}
+
+.border-gray-1 {
+  border: 1px solid #d3d3d3;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid $gray-2 !important;
+}
+
+.border-width-1 {
+  border-width: 1px !important;
+}
+
+.border-style-solid {
+  border-style: solid !important;
+}
+
+.dashed {
+  border-style: dashed !important;
+}
+
+.square {
+  border-radius: 0 !important;
+}
+
+.circle {
+  border-radius: 50% !important;
+}
+
+.round-edge-xs {
+  border-radius: 0.3rem !important;
+}
+
+.round-edge-md-1 {
+  border-radius: 0.5rem !important;
+}
+
+.round-edge-md {
+  border-radius: 0.6rem !important;
+}
+
+.round-edge-lg {
+  border-radius: 0.8rem !important;
+}
+
+.round-edge-lg-1 {
+  border-radius: 0.25rem !important;
+}
+
+.round-edge-xl {
+  border-radius: 2rem !important;
+}
+
+.round-edge-xxl {
+  border-radius: 3.125 !important;
+}
+
+.round-edge-left-xs {
+  border-radius: 0.5rem 0 0 0.5rem !important;
+}
+
+.round-edge-4 {
+  border-radius: 4px;
+}
+
+.round-edge-6 {
+  border-radius: 6px !important;
+}
+
+.round-edge-8 {
+  border-radius: 8px !important;
+}
+
+.border-right-red {
+  border-right: 4px solid $red-2 !important;
+}
+
+.border-right-transparent {
+  border-right: 4px solid transparent !important;
+}
+
+.border-fit-content-height {
+  height: fit-content;
+}
+
+.border-orange {
+  border: 1px solid #F36161 !important
+}
+
+.border-orange:hover {
+  border: 1px solid #F36161 !important
+}

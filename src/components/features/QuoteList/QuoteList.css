@@ -1,0 +1,17 @@
+.quotes-container {
+  margin-top: 1em;
+}
+
+.quotes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.loading-container, .error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}

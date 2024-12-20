@@ -1,0 +1,156 @@
+.visibility-hidden {
+  visibility: hidden !important;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-0-35 {
+  opacity: 0.35 !important;
+}
+
+.opacity-0-5 {
+  opacity: 0.5 !important;
+}
+
+.opacity-0-7 {
+  opacity: 0.7 !important;
+}
+
+.opacity-0-7-5 {
+  opacity: 0.75 !important;
+}
+
+.opacity-1 {
+  opacity: 1 !important;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.default {
+  cursor: default !important;
+}
+
+.grab {
+  cursor: grab !important;
+}
+
+.zoom-in {
+  cursor: zoom-in !important;
+}
+
+.zoom-out {
+  cursor: zoom-out !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+}
+
+.white-space-nowrap {
+  white-space: nowrap !important;
+}
+
+.white-space-normal {
+  white-space: normal !important;
+}
+
+.scrollable-children {
+  overflow: hidden !important;
+
+  > * {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+.invisible-scrollbar::-webkit-scrollbar{
+  display: none !important;
+  width: 0 !important
+}
+
+.object-cover-center {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.object-contain-center {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.object-contain-top {
+  object-fit: contain !important;
+  object-position: top !important;
+}
+
+.box-no-shadow {
+  box-shadow: none !important;
+}
+
+.box-shadow-1 {
+  box-shadow: 0px 10px 4px 1px rgba(0, 0, 0, 0.25) !important;
+}
+
+.box-shadow-2 {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.box-shadow-3 {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+.box-shadow-4 {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+.box-shadow-5 {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+.line-break-anywhere {
+  line-break: anywhere !important;
+}
+
+.arrow-down:after {
+  content: '';
+  margin-left: 0.8rem;
+  border-left: 0.4rem solid transparent;
+  border-right: 0.4rem solid transparent;
+  border-top: 0.4rem solid white;
+}
+
+.arrow-up:after {
+  content: '';
+  margin-left: 0.8rem;
+  border-left: 0.4rem solid transparent;
+  border-right: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid black;
+}
+
+.transition-all-0-3 {
+  transition: all 0.3s ease-in-out !important;
+}
+
+.events-none {
+  pointer-events: none !important;
+}

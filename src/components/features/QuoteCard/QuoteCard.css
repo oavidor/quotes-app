@@ -1,0 +1,32 @@
+.card {
+  width: 100%;
+  margin-bottom: 1.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: lightblue;
+}
+
+.author {
+  font-weight: bold;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-tags {
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 1em;
+}
+
+.card-body {
+  font-size: 1.1em;
+}
