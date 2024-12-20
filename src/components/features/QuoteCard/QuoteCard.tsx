@@ -2,6 +2,12 @@ import { FC, memo } from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
 import { Quote } from '@app/models';
 import './QuoteCard.css'
+import styled from '@emotion/styled';
+
+const Container = styled(Card)`
+ border-radius: 8px;
+ background-color: #F4F7F9
+`;
 
 interface QuoteCardProps {
     quote: Quote
@@ -9,7 +15,7 @@ interface QuoteCardProps {
 
 let QuoteCard: FC<QuoteCardProps> = ({ quote }) => {
   return (
-    <Card className='card' sx={{ borderRadius: '8px', backgroundColor: '#F4F7F9'}}>
+    <Container className='card'>
       <CardContent>
         <Typography variant="h6" component="div">
           {`"${quote.body}"`}
@@ -21,7 +27,7 @@ let QuoteCard: FC<QuoteCardProps> = ({ quote }) => {
           Tags: {quote.tags.join(', ')}
         </Typography>
       </CardContent>
-    </Card>
+    </Container>
   );
 };
 

@@ -1,26 +1,57 @@
-import React, { ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useCallback } from 'react';
 import { TextField, Button, Box } from '@mui/material';
+import styled from '@emotion/styled';
+
+
+const Container = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+`;
+
+const FieldsContainer = styled(Box)`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+`;
+
+const SubmitButton = styled(Button)`
+  width: 80%;
+  max-width: 200px;
+`;
 
 interface ControlPanelProps {
-  count: number;
-  filter: string;
-  loading: boolean;
-  handleCountChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleFilterChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleFetchQuotes: () => void;
+  onSubmit: (count: number, filter: string) => void;
+  submitDisabled: boolean;
 }
 
-const ControlPanel: React.FC<ControlPanelProps> = ({
-  count,
-  filter,
-  loading,
-  handleCountChange,
-  handleFilterChange,
-  handleFetchQuotes,
-}) => {
+
+const ControlPanel: React.FC<ControlPanelProps> = ({ onSubmit, submitDisabled }) => {
+  const [count, setCount] = useState<number>(0);
+  const [filter, setFilter] = useState<string>('');
+
+  const handleCountChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setCount(Number(event.target.value) )
+    },
+    []
+  )
+
+  const handleFilterChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setFilter(event.target.value)
+    },
+    []
+  );
+
+  const handleSubmit = useCallback(() => {
+    onSubmit(count, filter);
+  }, [onSubmit, count, filter]);
+
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '2rem' }}>      
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
+    <Container>
+      <FieldsContainer>
         <TextField
           label="Size of Quotes"
           type="number"
@@ -35,17 +66,16 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
           onChange={handleFilterChange}
           fullWidth
         />
-      </Box>
+      </FieldsContainer>
 
-      <Button
+      <SubmitButton
         variant="contained"
-        onClick={handleFetchQuotes}
-        disabled={loading}
-        sx={{ width: '80%', maxWidth: '200px' }}
+        onClick={handleSubmit}
+        disabled={submitDisabled}
       >
         Fetch Quotes
-      </Button>
-    </Box>
+      </SubmitButton>
+    </Container>
   );
 };
 

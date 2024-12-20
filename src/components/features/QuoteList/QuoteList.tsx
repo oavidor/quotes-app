@@ -10,7 +10,7 @@ interface QuoteListProps {
 
 let QuoteList: FC<QuoteListProps> = ({ quotes = []}) => {
     return (
-      <Box sx={{ marginTop: '2em', marginBottom: '4em', overflowY: 'scroll', maxHeight: '60vh' }}>
+      <Box className='quotes-container'>
         <Box className="quote-card-container">
           {quotes.map((quote) => (
               <QuoteCard quote={quote}  key={quote.id}/>

@@ -12,43 +12,41 @@ const MIN_COUNT = 0;
 
 const QuotesView: React.FC = () => {
   const [state, dispatch] = useReducer(quotesReducer, initialState);
-  const { quotes, loading, error, count, filter } = state;
+  const { quotes, loading, error } = state;
   const { fetchQuotes } = useQuotesData();
 
-  const handleCountChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: ActionType.SET_STATE, payload: { count: Number(event.target.value), error: null } });
-    },
-    []
-  );
-
-  const handleFilterChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch({ type: ActionType.SET_STATE, payload: { filter: event.target.value, error: null } });
-    },
-    []
-  );
-
-  const handleFetchQuotes = useCallback(async () => {
+  const validateInput = useCallback((count: number) => {
     if (count <= MIN_COUNT || count > MAX_COUNT) {
       dispatch({
         type: ActionType.SET_STATE,
         payload: { error: `Number must be greater than ${MIN_COUNT} and smaller than ${MAX_COUNT}` },
       });
-      return;
+      return false;
     }
-    dispatch({ type: ActionType.INITIATE_FETCH_REQUEST });
+    return true;
+  }, [dispatch]);
 
-    try {
-      const fetchedQuotes = await fetchQuotes(count, filter);
-      dispatch({ type: ActionType.SET_STATE, payload: { quotes: fetchedQuotes, loading: false } });
-    } catch (err) {
-      dispatch({
-        type: ActionType.SET_STATE,
-        payload: { error: `${err ?? 'Error fetching quotes'}`, loading: false },
-      });
-    }
-  }, [fetchQuotes, filter, count]);
+  const handleFetchQuotes = useCallback(
+    async (count: number, filter: string) => {
+     
+      if (!validateInput(count)) {
+        return;
+      }
+
+      dispatch({ type: ActionType.INITIATE_FETCH_REQUEST });
+      
+      try {
+        const fetchedQuotes = await fetchQuotes(count, filter);
+        dispatch({ type: ActionType.SET_STATE, payload: { quotes: fetchedQuotes, loading: false } });
+      } catch (err) {
+        dispatch({
+          type: ActionType.SET_STATE,
+          payload: { error: `${err ?? 'Error fetching quotes'}`, loading: false },
+        });
+      }
+    },
+    [fetchQuotes, validateInput]
+  );
 
   return (
     <Box sx={{ marginTop: 4, px: '2em' }}>
@@ -56,12 +54,8 @@ const QuotesView: React.FC = () => {
         Quotes of the Day
       </Typography>
       <ControlPanel
-        count={count}
-        filter={filter}
-        loading={loading}
-        handleCountChange={handleCountChange}
-        handleFilterChange={handleFilterChange}
-        handleFetchQuotes={handleFetchQuotes}
+        onSubmit={handleFetchQuotes}
+        submitDisabled={loading}
       />
       <ErrorComponent error={error} />
       {loading ? <LoaderComponent /> : <QuoteList quotes={quotes} />}

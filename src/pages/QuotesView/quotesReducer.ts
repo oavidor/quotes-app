@@ -6,8 +6,6 @@ export enum ActionType {
 }
 
 interface State {
-  count: number;
-  filter: string;
   quotes: Quote[];
   loading: boolean;
   error: string | null;
@@ -19,8 +17,6 @@ interface Action {
 }
 
 export const initialState: State = {
-  count: 0,
-  filter: '',
   quotes: [],
   loading: false,
   error: null,
